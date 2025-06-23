@@ -1,0 +1,21 @@
+server:
+  port: 8888
+logging:
+  level:
+    org.springframework.cloud.config: DEBUG
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${GIT_CONFIG_URI}
+          username: ${GIT_USERNAME}
+          password: ${GIT_PASSWORD}
+          default-label: ${GIT_DEFAULT_LABEL:master}
+          search-paths: .
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

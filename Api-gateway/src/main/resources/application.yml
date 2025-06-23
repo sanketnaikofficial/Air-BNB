@@ -1,0 +1,18 @@
+spring:
+  config:
+    import: configserver:http://localhost:8888
+  application:
+    name: apigateway
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true
+server:
+  port: 5556
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
