@@ -1,3 +1,20 @@
 Before running all the modules, Make sure to initialize the environment variables in your system.
 We have bugs in NotificationService module, especially compatibality issues. Debug yourelf.
 We have 1 bug in Payment Service i.e after the successful transaction while updating the "pending" status to "booked" it isn't changing the status in booking module.
+
+
+
+
+
+
+
+## 🧪 Postman Collection
+
+You can download and import the Postman collection to test the API:
+
+[👉 Download AirBNB.postman_collection.json](postman/AirBnb.postman_collection.json)
+
+To import:
+1. Open Postman.
+2. Click `Import` → `Upload Files`.
+3. Select the downloaded `.json` file.
