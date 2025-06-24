@@ -1,12 +1,8 @@
-Before running all the modules, Make sure to initialize the environment variables in your system.
-We have bugs in NotificationService module, especially compatibality issues. Debug yourelf.
-We have 1 bug in Payment Service i.e after the successful transaction while updating the "pending" status to "booked" it isn't changing the status in booking module.
+Before running all the modules, make sure to initialize the environment variables in your system.  
+We have bugs in the `NotificationService` module, especially compatibility issues. Debug yourself.  
+We have 1 bug in `PaymentService`: after the successful transaction, the status isn't updating from "pending" to "booked" in the booking module.
 
-
-
-
-
-
+---
 
 ## 🧪 Postman Collection
 
@@ -18,3 +14,11 @@ To import:
 1. Open Postman.
 2. Click `Import` → `Upload Files`.
 3. Select the downloaded `.json` file.
+
+---
+
+## ⚙️ Configuration Server Repository
+
+This project uses a centralized Configuration Server. You can find the configuration repository here:
+
+[🔗 Configuration-Repository](https://github.com/sanketnaikofficial/Configuration-Repository.git)
