@@ -1,0 +1,1542 @@
+{
+	"info": {
+		"_postman_id": "ba14bb95-bcf6-4715-956b-ebf16616fe62",
+		"name": "Air Bnb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40273806",
+		"_collection_link": "https://learners-6520.postman.co/workspace/Learners-Workspace~355b1897-7b30-4127-bcad-a27ed864f6c2/collection/40273806-ba14bb95-bcf6-4715-956b-ebf16616fe62?action=share&source=collection_link&creator=40273806"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Yash dayal\",\r\n  \"username\": \"yash.official\",\r\n  \"email\": \"yash@gmail.com\",\r\n  \"password\": \"Yash456##\",\r\n  \"role\": \"ROLE_CUSTOMER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5556/authservice/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5556",
+							"path": [
+								"authservice",
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5556/authservice/api/v1/auth/add-mobile?mobile=6434487978&username=viratkohli.official",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5556",
+							"path": [
+								"authservice",
+								"api",
+								"v1",
+								"auth",
+								"add-mobile"
+							],
+							"query": [
+								{
+									"key": "mobile",
+									"value": "6434487978"
+								},
+								{
+									"key": "username",
+									"value": "viratkohli.official"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Role_Based_Login",
+					"item": [
+						{
+							"name": "Customer_login_API_Access",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXJhdGtvaGxpLm9mZmljaWFsIiwicm9sZSI6IlJPTEVfQ1VTVE9NRVIiLCJpYXQiOjE3NDc3NjQ1MTUsImV4cCI6MTc0ODEyNDYxMn0.Tmr51m0vdu72xayq0MniB5r0qJ1Op5JNQie2n7hMuSQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/auth/getHello",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"getHello"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin_login_API_Access",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXJhdGtvaGxpLm9mZmljaWFsIiwicm9sZSI6IlJPTEVfQ1VTVE9NRVIiLCJpYXQiOjE3NDc3NjQ1MTUsImV4cCI6MTc0ODEyNDYxMn0.Tmr51m0vdu72xayq0MniB5r0qJ1Op5JNQie2n7hMuSQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/auth/getWelcome",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"getWelcome"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userName\": \"rajat.official\",\r\n  \"password\": \"Rajat098###\"\r\n  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5556/authservice/api/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"authservice",
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login with Mobile OTP",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/authservice/api/v1/auth/login/mobile?mobile=9856987458&OTP",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"authservice",
+										"api",
+										"v1",
+										"auth",
+										"login",
+										"mobile"
+									],
+									"query": [
+										{
+											"key": "mobile",
+											"value": "9856987458"
+										},
+										{
+											"key": "OTP",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "login/SignUp through API gateway",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Manish Pandey\",\r\n  \"username\": \"manish.official\",\r\n  \"email\": \"Manish@gmail.com\",\r\n  \"password\": \"Manish456**\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5556/auth/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5556",
+							"path": [
+								"auth",
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXJhdGtvaGxpLm9mZmljaWFsIiwicm9sZSI6IlJPTEVfQ1VTVE9NRVIiLCJpYXQiOjE3NDgyNTY0MTIsImV4cCI6MTc0ODYxNjUwOX0.gbzKMf7hQoXh2UDRBUnHHGqmx3Kz7EQKY_AiLW1ieyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"Test**@$\",\r\n  \"userName\": \"viratkohli.official\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5556/auth/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5556",
+							"path": [
+								"auth",
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Microservices-01",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://desktop-biivi8g:5556/micro1/message",
+							"protocol": "http",
+							"host": [
+								"desktop-biivi8g"
+							],
+							"port": "5556",
+							"path": [
+								"micro1",
+								"message"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Property Service",
+			"item": [
+				{
+					"name": "Property",
+					"item": [
+						{
+							"name": "Add Property with image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data",
+											"value": "{\n\n  \"name\": \"High Homes\",\n  \"numberOfBeds\": 2,\n  \"numberOfRooms\": 10,\n  \"numberOfBathrooms\": 1,\n  \"numberOfGuestAllowed\": 4,\n  \"city\": \"Bengaluru\",\n  \"area\": \"BTM layout\",\n  \"state\": \"Karnataka\",\n  \"rooms\": [\n    {\n      \"roomType\": \"Deluxe\",\n      \"basePrice\": 15700.0\n    },\n    {\n      \"roomType\": \"Standard\",\n      \"basePrice\": 17200.0\n    }\n  ]\n\n\n}\n",
+											"type": "text"
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": "/C:/Users/HP/Downloads/pexels-photo-1571460.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/create-property-with-images",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"create-property-with-images"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Property by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/get-property-id?id=15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"get-property-id"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete property by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/delete/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"delete",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Area",
+					"item": [
+						{
+							"name": "Add Area",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"areaName\": \"Electronic City\"\r\n  \r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/area/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"area",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get by area id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/area/get-area/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"area",
+										"get-area",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get by all areas",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/area/get-all-areas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"area",
+										"get-all-areas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete by property",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/area/delete/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"area",
+										"delete",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "State",
+					"item": [
+						{
+							"name": "Add State",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"stateName\": \"Jammu Kashmir\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/state/create-state",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"state",
+										"create-state"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get state by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/state/get-state/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"state",
+										"get-state",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all state",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/state/get-all-state",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"state",
+										"get-all-state"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/state/delete-state/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"state",
+										"delete-state",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Rooms",
+					"item": [
+						{
+							"name": "Rooms",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"roomType\":\"Deluxe\",\r\n    \"basePrice\":\"434.00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/rooms/add-room/8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"rooms",
+										"add-room",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete rooms",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/rooms/delete-room/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"rooms",
+										"delete-room",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "RoomsAvailability",
+					"item": [
+						{
+							"name": "Add Availability",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"availableDate\": \"2025-06-14\",\r\n  \"availableCount\": 5\r\n\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/room-availability/add/12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"room-availability",
+										"add",
+										"12"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get the availability details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/room-availability/get",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"room-availability",
+										"get"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/room-availability/delete/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"room-availability",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "City",
+					"item": [
+						{
+							"name": "Add city",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"cityName\": \"Mangalore\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://desktop-biivi8g:5556/propertyservice/api/v1/property/city/create",
+									"protocol": "http",
+									"host": [
+										"desktop-biivi8g"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"city",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/city/get-by-id/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"city",
+										"get-by-id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/city/getAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"city",
+										"getAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/city/delete-by-id/10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"city",
+										"delete-by-id",
+										"10"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Search Property",
+					"item": [
+						{
+							"name": "Search Property by date and city",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/search-property?name=Bengaluru&date=2025-06-14",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"search-property"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Bengaluru"
+										},
+										{
+											"key": "date",
+											"value": "2025-06-14"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Booking Service",
+			"item": [
+				{
+					"name": "Add Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"propertyId\":12,\r\n    \"roomId\":12,\r\n    \"name\":\"Sanket\",\r\n    \"email\": \"gill.com\",\r\n    \"mobile\": \"5412539643\",\r\n    \"numberOfRooms\":1,\r\n    \"totalNights\": 1,\r\n    \"date\":[\r\n        \"2025-06-14\"\r\n        \r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5556/bookingservice/api/v1/booking/add-to-cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5556",
+							"path": [
+								"bookingservice",
+								"api",
+								"v1",
+								"booking",
+								"add-to-cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment Service",
+			"item": [
+				{
+					"name": "Test Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 34400,\r\n  \"quantity\": 1,\r\n  \"name\": \"HauntedHomes\",\r\n  \"currency\": \"INR\",\r\n  \"bookingId\": 16\r\n  \r\n\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5556/paymentservice/product/v1/payment/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5556",
+							"path": [
+								"paymentservice",
+								"product",
+								"v1",
+								"payment",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FeignClient APIs",
+			"item": [
+				{
+					"name": "Property Service",
+					"item": [
+						{
+							"name": "Get Property by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/get-property-id?id=15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"get-property-id"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get total rooms available",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/rooms/room-available-room-id?id=12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"rooms",
+										"room-available-room-id"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By Room ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/rooms/get-by-room-id?id=12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"rooms",
+										"get-by-room-id"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Availability by room Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/room-availability/get-all-availability-by-room-id?roomId=12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"room-availability",
+										"get-all-availability-by-room-id"
+									],
+									"query": [
+										{
+											"key": "roomId",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Room availability by date and property Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/propertyservice/api/v1/property/room-availability/get-all-availability-by-property-id-and-date?propertyId=12&date=2025-06-14",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"propertyservice",
+										"api",
+										"v1",
+										"property",
+										"room-availability",
+										"get-all-availability-by-property-id-and-date"
+									],
+									"query": [
+										{
+											"key": "propertyId",
+											"value": "12"
+										},
+										{
+											"key": "date",
+											"value": "2025-06-14"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Booking Success URL, provide JWT token manually",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWphdC5vZmZpY2lhbCIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzUwNjc3NTc2LCJleHAiOjE3NTEwMzc2NzN9.6Fo9n2HyqS93pbnaqoinrY0ewRHJ7gTqR9L1Ii2vFC0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5556/paymentservice/product/v1/payment/success?session_id=cs_test_a159341h9wtXMBbdjCjHARr2gPNmzqOMNDz8totTJVF2mqqrfEkMljBOJl&bookingId=16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5556",
+									"path": [
+										"paymentservice",
+										"product",
+										"v1",
+										"payment",
+										"success"
+									],
+									"query": [
+										{
+											"key": "session_id",
+											"value": "cs_test_a159341h9wtXMBbdjCjHARr2gPNmzqOMNDz8totTJVF2mqqrfEkMljBOJl"
+										},
+										{
+											"key": "bookingId",
+											"value": "16"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
